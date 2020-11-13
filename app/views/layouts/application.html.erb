@@ -10,7 +10,14 @@
   </head>
 
   <body>
-    <p><%= flash["notice"] %></p>
-    <%= yield %>
+
+    <%= render "shard/navbar" %>
+    <%= render "shard/flash" if notice %>
+    
+    <main class="main-section">
+      <%= yield %>
+    </main>
+    
+
   </body>
 </html>
