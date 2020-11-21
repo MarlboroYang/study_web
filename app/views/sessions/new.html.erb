@@ -1,0 +1,19 @@
+<h1>會員登入</h1>
+
+<%= form_with(model: @user, url: login_path, method: 'post', local: true) do |f| %>
+
+
+<div class="field">
+<%= f.label :email %>
+<%= f.text_field :email %>
+</div>
+
+<div class="field">
+<%= f.label :password, "密碼" %>
+<%= f.password_field :password %>
+</div>
+
+<div class="field">
+<%= f.submit "登入"%>
+<% end %>
+</div>

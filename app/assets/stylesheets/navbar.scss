@@ -1,22 +1,22 @@
 //nav > ul > li
 
-nav{
-  background-color: orange;
+
+nav {
+  background-color: #f0f0f0;
   font-size: 20px;
   padding: 10px;
-}
-ul{
-
   display: flex;
-}
-li{
-  margin: 0 10px;
-  color: black;
-}
-li a{
+  justify-content: space-between;
 
-  text-decoration: none;
-}
-li:hover{
-  color: red;
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 10px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 }
