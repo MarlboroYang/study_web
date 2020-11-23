@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+  
   def create
     # @post = Post.new(post_params)
     # @post.board = @board
@@ -26,9 +27,11 @@ class PostsController < ApplicationController
 
   def show
   end
+
   def edit
     @post = current_user.posts.find(params[:id])
   end
+
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
