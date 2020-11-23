@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @posts = @board.posts.order(id: :desc)
   end
 
   def new
