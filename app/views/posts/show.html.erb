@@ -1,6 +1,17 @@
+<h2 data-controller="favorite" data-favorite-id="<%= @post.id %>">
+  <% if user_signed_in? %>
+    <%= link_to '#', data: { action: 'favorite#go' } do %>
+      <% if current_user.favorite?(@post) %>
+        <i class="fas fa-thumbs-up" data-target="favorite.icon"></i>
+      <% else %>
+        <i class="far fa-thumbs-up" data-target="favorite.icon"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+</h2>
 <h2><%= @post.user.nickname %></h2>
 <h1><%= @post.title %></h1>
-
+<i class="far fa-heart"></i>
 <%= link_to '編輯', edit_post_path(@post) if @post.owned_by?(current_user) %>
 
 <article>

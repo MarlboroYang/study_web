@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %>-<%= action_name %>">
 
     <%= render "shard/navbar" %>
     <%= render "shard/flash" if notice %>
