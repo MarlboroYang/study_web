@@ -16,3 +16,17 @@ $error_color: pink;
     color: $error_color;
   }
 }
+.board-title {
+  font-size: 20px;
+  text-decoration: none;
+}
+.board-title-open {
+}
+
+.board-title-locked {
+  color: red;
+}
+
+.board-title-hidden {
+  opacity: 0.3;
+}

@@ -5,7 +5,9 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @post.comments.where(deleted_at: nil).order(id: :desc).includes(:user)
+    @comments = @post.comments.includes(:user).page(params[:page]).per(10)
+    # /posts/7?page=3
+    # params[:page]
   end
 
   def new

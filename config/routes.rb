@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
 
   resources :boards do
+    member do
+      patch :hide
+      patch :open
+      patch :lock
+    end
     resources :posts, shallow: true
   end
   resources :posts, only:[:show, :edit, :update, :destroy] do

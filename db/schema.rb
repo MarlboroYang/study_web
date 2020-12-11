@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_062226) do
+ActiveRecord::Schema.define(version: 2020_12_11_055113) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.string "state", default: "open"
+    t.index ["deleted_at"], name: "index_boards_on_deleted_at"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -46,7 +49,9 @@ ActiveRecord::Schema.define(version: 2020_12_04_062226) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
     t.index ["board_id"], name: "index_posts_on_board_id"
+    t.index ["deleted_at"], name: "index_posts_on_deleted_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

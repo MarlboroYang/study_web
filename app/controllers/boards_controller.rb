@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :find_board, only: [:show, :edit, :update, :destroy]
+  before_action :find_board, only: [:show, :edit, :update, :destroy, :hide, :open, :lock]
 
   def index
     @boards = Board.all
@@ -30,6 +30,18 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy
     redirect_to root_path, notice: '看板已刪除'
+  end
+  def hide
+    @board.hide! if @board.may_hide?
+    redirect_to boards_path, notice: '看板去旅遊了！ '
+  end
+  def open
+    @board.open! if @board.may_open?
+    redirect_to boards_path, notice: '看板回來了！ '
+  end
+  def lock
+    @board.lock! if @board.may_lock?
+    redirect_to boards_path, notice: '看板去睡了！ '
   end
   private
   def find_board
