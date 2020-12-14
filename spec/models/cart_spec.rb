@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-
-
 RSpec.describe Cart, type: :model do
   describe "基本功能" do
     it "可以把商品丟到到購物車裡，然後購物車裡就有東西了。" do 
-      #AAA，Arrange，Act，Assert。
+      #AAA，Arrange
       cart = Cart.new
+      # Act
       cart.add_item(1)
+      # Assert
       expect(cart.empty?).to be false  
     end
     it "如果加了相同種類的商品到購物車裡，購買項目（CartItem）並不會增加，但商品的數量會改變。" do
@@ -74,6 +74,7 @@ RSpec.describe Cart, type: :model do
     end
   end
   private
+  # 定義車內商品，方便直接帶值進去。
   def cart_hash
     {
       "items" => [
