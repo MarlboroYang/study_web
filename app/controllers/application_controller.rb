@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   
   include SessionsHelper
+  include Pundit
   
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 

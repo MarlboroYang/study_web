@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "paranoia", "~> 2.2"
 gem 'kaminari'
 gem 'aasm'
+gem 'friendly_id', '~> 5.4.0'
+gem "pundit"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

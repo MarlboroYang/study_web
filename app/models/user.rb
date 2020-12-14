@@ -9,6 +9,7 @@ class User < ApplicationRecord
   
   before_create :encrypt_password
   
+  has_many :boards
   has_many :posts
   has_many :comments
   has_many :favorite_posts

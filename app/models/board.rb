@@ -5,6 +5,7 @@ class Board < ApplicationRecord
   validates :title, presence: true, length: { minimum: 4 }
 
   has_many :posts
+  belongs_to :user, optional: true
 
   aasm(column: 'state', no_direct_assignment: true) do
     state :open, initial: true

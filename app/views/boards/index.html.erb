@@ -14,11 +14,11 @@
                   method: 'delete',
                   data: { confirm: '是否確定刪除？' }%>
                   
-<%= link_to "隱藏", hide_board_path(board), method: 'patch' if board.may_hide? %>
+<%= link_to "隱藏", hide_board_path(board), method: 'patch' if check?(board, :hide) %>
 
-<%= link_to "開放", open_board_path(board), method: 'patch' if board.may_open? %>
+<%= link_to "開放", open_board_path(board), method: 'patch' if  check?(board, :open) %>
 
-<%= link_to "鎖定", lock_board_path(board), method: 'patch' if board.may_lock? %>
+<%= link_to "鎖定", lock_board_path(board), method: 'patch' if check?(board, :lock) %>
 
 <%= link_to board.title, board, class: board_title_css(board) %>
 </li>

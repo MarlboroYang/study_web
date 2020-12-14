@@ -84,6 +84,8 @@ GEM
     ffi (1.13.1-x64-mingw32)
     ffi (1.13.1-x86-mingw32)
     foreman (0.87.2)
+    friendly_id (5.4.1)
+      activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -141,6 +143,8 @@ GEM
       nio4r (~> 2.0)
     puma (4.3.6-java)
       nio4r (~> 2.0)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
     rack (2.2.3)
     rack-mini-profiler (2.2.0)
       rack (>= 1.2.0)
@@ -252,12 +256,14 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   foreman (~> 0.87.2)
+  friendly_id (~> 5.4.0)
   hirb-unicode (~> 0.0.5)
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.2)
   paranoia (~> 2.2)
   puma (~> 4.1)
+  pundit
   rack-mini-profiler (~> 2.2)
   rails (~> 6.0.3, >= 6.0.3.3)
   sass-rails (>= 6)
