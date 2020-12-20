@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :favorite_posts
   has_many :my_favorites, through: :favorite_posts, source: 'post'
+  has_many :orders
 
   def self.login(user)
     pw = Digest::SHA1.hexdigest("a#{user[:password]}z")

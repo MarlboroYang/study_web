@@ -32,6 +32,8 @@ gem 'kaminari'
 gem 'aasm'                         #狀態機
 gem 'friendly_id', '~> 5.4.0'      #網址美化用
 gem "pundit"                       #安全質設定
+gem "braintree", "~> 3.1.0"        #假刷卡設定
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

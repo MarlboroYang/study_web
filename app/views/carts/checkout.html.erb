@@ -1,0 +1,46 @@
+<%# 下面這邊是假刷卡用的，從網頁上copy過來的。 %>
+<script src="https://js.braintreegateway.com/web/dropin/1.25.0/js/dropin.min.js"></script>
+<%# ==========假刷卡======== %>
+<h1>結帳</h1>
+
+<%= render 'cart', cart: current_cart %>
+
+<%= form_for(@order, html: { id: 'payment-form' } ) do |f| %>
+<div>
+<%= f.label :usermane %>
+<%= f.text_field :username %>
+</div>
+<div>
+<%= f.label :tel %>
+<%= f.text_field :tel %>
+</div>
+<div>
+<%= f.label :address %>
+<%= f.text_field :address %>
+</div>
+<%# 下面這兩行是假刷卡用的 %>
+<div id="dropin-container"></div>
+<input type="hidden" id="nonce" name="payment_method_nonce"/>
+<%# ==========假刷卡======== %>
+<%= f.submit '確認付款'%>
+<% end %>
+
+<%# 下面這邊是假刷卡用的，從網頁上copy過來的。 %>
+<script type="text/javascript">
+const form = document.getElementById('payment-form');
+braintree.dropin.create({
+  authorization: '<%= @token %>',
+  container: '#dropin-container'
+}).then((dropinInstance) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    dropinInstance.requestPaymentMethod().then((payload) => {
+      document.getElementById('nonce').value = payload.nonce;
+      form.submit();
+    }).catch((error) => { throw error; });
+  });
+}).catch((error) => {
+  // handle errors
+});
+</script>
+<%# ==========假刷卡======== %>

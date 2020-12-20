@@ -2,11 +2,17 @@
   <ul>
     <li><%= link_to "首頁", root_path %></li>
     <li><%= link_to "看板列表", boards_path %></li>
+    <li> <%= link_to "購買點數卡", pricing_path %> </li>
   </ul>
   <ul>
-  <h2><i class="far fa-kiss-wink-heart"></i></h2>
     <% if current_user %>
+    <li>
+      <%= link_to cart_path do %>
+       <i class="fas fa-truck-pickup"> <%= current_cart.items.count %> / <%= current_cart.total_price %> </i>
+      <% end %>
+    </li>
     <li><%= current_user.nickname %></li>
+    <i class="far fa-kiss-wink-heart"></i>
     <li><%= link_to "修改", edit_users_path%></li>
     <li><%= link_to "登出", sign_out_users_path, method: 'delete' %></li>
     <% else %>
