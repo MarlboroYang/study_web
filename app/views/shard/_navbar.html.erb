@@ -1,14 +1,15 @@
 <nav>
-  <ul>
+  <ul data-controller="xyz" data-action="abc@document->xyz#hello">
     <li><%= link_to "首頁", root_path %></li>
     <li><%= link_to "看板列表", boards_path %></li>
     <li> <%= link_to "購買點數卡", pricing_path %> </li>
   </ul>
   <ul>
     <% if current_user %>
-    <li>
+    <li data-controller="cart" data-action="abc@document->cart#update">
       <%= link_to cart_path do %>
-       <i class="fas fa-truck-pickup"> <%= current_cart.items.count %> / <%= current_cart.total_price %> </i>
+        <i class="fas fa-truck-pickup"></i>
+        (<span data-target="cart.detail"><%= current_cart.items.count %> / <%= current_cart.total_price %></span>)
       <% end %>
     </li>
     <li><%= current_user.nickname %></li>
