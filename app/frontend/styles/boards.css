@@ -1,0 +1,26 @@
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors label {
+  color: pink;
+}
+
+.field_with_errors input[type=text] {
+  border: solid 1px pink;
+  color: pink;
+}
+
+.board-title {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.board-title-locked {
+  color: red;
+}
+
+.board-title-hidden {
+  opacity: 0.3;
+}
+/*# sourceMappingURL=boards.css.map */
