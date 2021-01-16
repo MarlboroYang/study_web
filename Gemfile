@@ -28,12 +28,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "paranoia", "~> 2.2"           #軟刪除軟體
-gem 'kaminari'
+gem 'kaminari'                     #分頁軟體
 gem 'aasm'                         #狀態機
 gem 'friendly_id', '~> 5.4.0'      #網址美化用
-gem "pundit"                       #安全質設定
+gem "pundit"                       #權限設定
 gem "braintree", "~> 3.1.0"        #假刷卡設定
-gem "figaro"
+gem "figaro"                       #密碼保存
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
